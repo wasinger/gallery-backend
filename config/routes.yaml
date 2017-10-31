@@ -1,0 +1,22 @@
+index:
+    path: /{album}
+    defaults: { _controller: 'App\Controller\DefaultController::index', album: '' }
+
+image:
+    path: /image/{slug}
+    defaults:
+        _controller: 'App\Controller\ImageController::showImage'
+    requirements:
+        slug: .+
+
+thumbnail:
+    path: /thumbnail/{slug}
+    defaults:
+        _controller: 'App\Controller\ImageController::showThumbnail'
+    requirements:
+        slug: .+
+
+# first, run composer req annotations
+#controllers:
+#    resource: ../src/Controller/
+#    type: annotation
